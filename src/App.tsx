@@ -6,7 +6,8 @@ import {Header} from './components/Header';
 const App = () => {
   return (
     <SafeAreaView style={styles.Container}>
-      <Header />
+      <Header name="Renato" title="Olá, seja bem-vindo!" />
+      <Header name="Visitante" title="Bem-vindo!" />
     </SafeAreaView>
   );
 };

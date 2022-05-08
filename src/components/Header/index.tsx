@@ -1,13 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-//import { Container } from './styles',
+import {Props} from './types';
 
-export const Header = () => {
+export const Header = (props: Props) => {
   return (
     <View>
-      <Text style={styles.Title}>Olá!</Text>
-      <Text style={styles.SubTitle}>Renato!</Text>
+      <Text style={styles.Title}>{props.title}</Text>
+      <Text style={styles.SubTitle}>{props.name}</Text>
     </View>
   );
 };
