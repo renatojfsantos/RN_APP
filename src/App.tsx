@@ -1,13 +1,41 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {Button, SafeAreaView, StyleSheet} from 'react-native';
 
 import {Header} from './components/Header';
 
 const App = () => {
+  const [name, setName] = useState<string>('Bolinha');
+  const [title] = useState<string>('Olá');
+
+  /**
+   * Callback para alterar o nome
+   */
+  const handlePressButton = () => {
+    /**
+     * Setando o nome de forma separada utilizando o hook useState
+     */
+    // if (name === 'Bolinha') {
+    //   setName('Renato');
+    // } else {
+    //   setName('Bolinha');
+    // }
+
+    /**
+     * Setando passando a função de callback diretamente no state
+     */
+    setName(old => {
+      if (old === 'Bolinha') {
+        return 'Renato';
+      } else {
+        return 'Bolinha';
+      }
+    });
+  };
+
   return (
     <SafeAreaView style={styles.Container}>
-      <Header name="Renato" title="Olá, seja bem-vindo!" />
-      <Header name="Visitante" title="Bem-vindo!" />
+      <Header title={title} name={name} />
+      <Button title="Change name" onPress={handlePressButton} />
     </SafeAreaView>
   );
 };

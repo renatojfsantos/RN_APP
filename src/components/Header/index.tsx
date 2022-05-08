@@ -13,16 +13,12 @@ export const Header = (props: Props) => {
 };
 
 const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    margin: 20,
-  },
   Title: {
     color: 'black',
     fontSize: 30,
   },
   SubTitle: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 20,
   },
 });
