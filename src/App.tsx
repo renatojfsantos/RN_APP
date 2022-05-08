@@ -1,11 +1,25 @@
-import React, {useState} from 'react';
-import {Button, SafeAreaView, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {Alert, Button, SafeAreaView, StyleSheet} from 'react-native';
 
 import {Header} from './components/Header';
 
 const App = () => {
   const [name, setName] = useState<string>('Bolinha');
-  const [title] = useState<string>('Olá');
+  const [title, setTitle] = useState<string>('Olá');
+
+  /**
+   * Effect
+   */
+  useEffect(() => {
+    console.log('mounting');
+    if (name === 'Bolinha') {
+      setTitle('Hello');
+    } else {
+      setTitle('Olá');
+    }
+
+    return () => Alert.alert('Eita!', 'Component unmounting');
+  }, [name, title]);
 
   /**
    * Callback para alterar o nome
