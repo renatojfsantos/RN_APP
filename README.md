@@ -1,54 +1,26 @@
+<h1 align='center'>💻 Studying Components</h1>
+
+<h2 align='center'>🔄 Life cycle component</h2>
+
 <p align='center'>
   <img
-       width='400px'
-       src='https://cdn.worldvectorlogo.com/logos/react-native-1.svg'
-       alt='react native logo'
+     height='500px'
+     src='https://miro.medium.com/max/1400/1*fdGC22mqWBAQ7jOFPPAvIg.png'
+     alt='Life cycle component react-native'
   />
 </p>
 
-<h1 align='center'>
-  RN APP Template
-</h1>
-<h2 align='center'> # This project is to learn react-native cli framework </h2>
+# Topics
 
--[React-Native](https://reactnative.dev/)
-  - Version ~> "0.68.1"
+- Props
+- Hooks
+  - useState
+  - useEffect
+  - useMemo
+  - useRef
+  - useCallback
 
-## ⚙️ Running
+# Example: Header component
 
-- Pre running (Android | Ios)
-  - run `npm install` or `yarn`
-- IOS:
-  - run `npx pod-install && react-native run-ios`
-- Android:
-  - run `npx react-native run-android`
+https://user-images.githubusercontent.com/67006002/167431017-e811eeb4-ef1a-4be9-a843-fc5cc2d2f2d2.mov
 
-## 📂 Folder structure
-
-```plainText
-app
-.
-├─ __tests__        # Global setup tests
-├─ android          # Native android files
-├─ ios              # Native ios files
-└─ src              # Source files
-│  └┬─ @types       # Contains all global definitions of types an interfaces
-│   ├─ assets       # ContainsJs bundles assets. e.g: icons, splash, images etc...
-│   ├─ components   # Contains all global react components
-│   ├─ constants    # Constants files
-│   ├─ contexts     # All contexts
-│   ├─ hooks        # Customized hooks
-│   ├─ routes       # All routes
-│   ├─ screens      # All screens
-│   ├─ services     # Contains external and API services
-│   ├─ App          # Aplication entry
-│   .
-.
-├─ index            # Bundle entry
-.
-.
-└─ README.md        # Contains all global definitions of types an interfaces
-
-```
-
-##
