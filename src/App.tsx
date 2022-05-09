@@ -4,17 +4,17 @@ import {Button, SafeAreaView, StyleSheet} from 'react-native';
 import {Header} from './components/Header';
 
 const App = () => {
-  const [name, setName] = useState<string>('Bolinha');
-  const [title, setTitle] = useState<string>('Olá');
+  const [name, setName] = useState<string>('Stranger');
+  const [title, setTitle] = useState<string>('Bem vindo!');
 
   /**
    * Effect
    */
   useEffect(() => {
-    if (name === 'Bolinha') {
+    if (name === 'Stranger') {
       setTitle('Hello');
     } else {
-      setTitle('Olá');
+      setTitle('Bem vindo!');
     }
   }, [name, title]);
 
@@ -22,10 +22,10 @@ const App = () => {
    * Callback
    */
   const handlePressButton = useCallback(() => {
-    if (name === 'Bolinha') {
+    if (name === 'Stranger') {
       setName('Renato');
     } else {
-      setName('Bolinha');
+      setName('Stranger');
     }
   }, [name]);
 
