@@ -1,57 +1,22 @@
-import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import {Button} from './components/Button';
 import {Header} from './components/Header';
+import {useApperance} from './hooks/useApperance';
 
-const themeDark = {
-  colors: {
-    primary: 'black',
-    onPrimary: 'white',
-    secondary: 'red',
-    onSecondary: 'black',
-  },
-};
-
-const themeLight = {
-  colors: {
-    primary: 'white',
-    onPrimary: 'black',
-    secondary: 'green',
-    onSecondary: 'white',
-  },
-};
+import {Container} from './styles';
 
 const App = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const {theme} = useApperance();
 
   return (
-    <ThemeProvider theme={theme === 'light' ? themeLight : themeDark}>
-      <SafeAreaView style={styles.App}>
+    <ThemeProvider theme={theme}>
+      <Container>
         <Header />
-        <Button
-          onPress={() => {
-            setTheme(old => {
-              if (old === 'light') {
-                return 'dark';
-              } else {
-                return 'light';
-              }
-            });
-          }}
-        />
-      </SafeAreaView>
+        <Button onPress={() => {}} />
+      </Container>
     </ThemeProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  App: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;

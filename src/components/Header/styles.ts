@@ -1,15 +1,18 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  background-color: ${props => props.theme.colors.primary};
+  /* background-color: ${props => props.theme.colors.primary.main}; */
+  background-color: ${({theme}) => theme.colors.primary.main};
   border-width: 4px;
-  border-color: ${props => props.theme.colors.secondary};
+  /* border-color: ${props => props.theme.colors.secondary.main}; */
+  border-color: ${({theme}) => theme.colors.secondary.main};
   padding: 10px;
   border-radius: 4px;
 `;
 
 export const Title = styled.Text`
-  color: ${props => props.theme.colors.onPrimary};
+  /* color: ${props => props.theme.colors.primary.onMain}; */
+  color: ${({theme}) => theme.colors.primary.onMain};
   font-size: 20px;
 `;
 
