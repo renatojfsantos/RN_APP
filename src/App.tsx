@@ -1,19 +1,54 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {ThemeProvider} from 'styled-components';
+import {Button} from './components/Button';
 import {Header} from './components/Header';
 
+const themeDark = {
+  colors: {
+    primary: 'black',
+    onPrimary: 'white',
+    secondary: 'red',
+    onSecondary: 'black',
+  },
+};
+
+const themeLight = {
+  colors: {
+    primary: 'white',
+    onPrimary: 'black',
+    secondary: 'green',
+    onSecondary: 'white',
+  },
+};
+
 const App = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
   return (
-    <SafeAreaView style={styles.Container}>
-      <Header />
-    </SafeAreaView>
+    <ThemeProvider theme={theme === 'light' ? themeLight : themeDark}>
+      <SafeAreaView style={styles.App}>
+        <Header />
+        <Button
+          onPress={() => {
+            setTheme(old => {
+              if (old === 'light') {
+                return 'dark';
+              } else {
+                return 'light';
+              }
+            });
+          }}
+        />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 };
 
 const styles = StyleSheet.create({
-  Container: {
+  App: {
     flex: 1,
-    backgroundColor: 'purple',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
