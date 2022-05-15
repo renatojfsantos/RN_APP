@@ -7,4 +7,6 @@ export const Container = styled.Text<ContainerProps>`
   color: ${({theme, color}) => theme.colors[color].main};
   font-size: ${({theme, typography}) =>
     theme.typography[typography].fontSize}px;
+  font-family: ${({theme, typography}) =>
+    theme.typography[typography].fontFamily};
 `;

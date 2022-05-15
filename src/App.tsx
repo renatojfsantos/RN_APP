@@ -16,7 +16,7 @@ const App = () => {
       <Container>
         <Header />
         <Button onPress={() => {}} />
-        <Text typography="h1" color="primary">
+        <Text typography="h4" color="secondary">
           Renato
         </Text>
       </Container>
