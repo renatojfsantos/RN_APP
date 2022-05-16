@@ -2,6 +2,7 @@ import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import {Button} from './components/Button';
 import {Header} from './components/Header';
+import {Icon} from './components/Icon';
 import {Text} from './components/Text';
 
 import {useApperance} from './hooks/useApperance';
@@ -19,6 +20,9 @@ const App = () => {
         <Text typography="h4" color="secondary">
           Renato
         </Text>
+        <Icon icon="procurar" activeColor="secondary" />
+        {/* <Icon icon="procurar" size={150} /> */}
+        {/* <Icon icon="grafico" size={150} activeColor="error" /> */}
       </Container>
     </ThemeProvider>
   );
