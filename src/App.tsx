@@ -1,9 +1,9 @@
 import React from 'react';
+import {View} from 'react-native';
 import {ThemeProvider} from 'styled-components';
 import {Button} from './components/Button';
-import {Header} from './components/Header';
 import {Icon} from './components/Icon';
-import {Text} from './components/Text';
+import {Separator} from './components/Separator';
 
 import {useApperance} from './hooks/useApperance';
 
@@ -15,14 +15,19 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Header />
-        <Button onPress={() => {}} />
-        <Text typography="h4" color="secondary">
-          Renato
-        </Text>
-        <Icon icon="procurar" activeColor="secondary" />
-        {/* <Icon icon="procurar" size={150} /> */}
-        {/* <Icon icon="grafico" size={150} activeColor="error" /> */}
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}>
+          <Icon icon="procurar" size={150} />
+          <Separator width={30} height={150} />
+          <Icon icon="grafico" size={150} />
+        </View>
+        <Button color="surface" loading mode="outlined">
+          Change Icons
+        </Button>
       </Container>
     </ThemeProvider>
   );
