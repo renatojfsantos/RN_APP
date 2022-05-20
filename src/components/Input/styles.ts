@@ -8,7 +8,7 @@ interface BorderProps {
 }
 
 export const Container = styled.View`
-  margin-bottom: 10px;
+  margin-bottom: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const InputInternal = styled.TextInput`
@@ -25,17 +25,17 @@ export const Border = styled.View<BorderProps>`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border-radius: 10px;
+  border-radius: ${({theme}) => theme.borders.radius.sm}px;
   border-width: 1px;
   border-color: ${({borderColor}) => borderColor};
 `;
 
 export const Error = styled(Text)`
-  margin-top: 10px;
+  margin-top: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const Label = styled(Text)`
-  margin-bottom: 10px;
+  margin-bottom: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const IconContainer = styled.View<Pick<InputProps, 'iconPosition'>>`

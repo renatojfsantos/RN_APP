@@ -17,7 +17,7 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
   justify-content: center;
   flex-direction: row;
   border-width: 1px;
-  border-radius: 10px;
+  border-radius: ${({theme}) => theme.borders.radius.sm}px;
   border-color: ${({borderColor}) => borderColor || 'transparent'};
   background-color: ${({color, mode}) =>
     mode === 'outlined' ? 'transparent' : color};
@@ -31,5 +31,5 @@ export const Title = styled.Text<TitleProps>`
 `;
 
 export const Loading = styled.ActivityIndicator`
-  margin-left: 10px;
+  margin-left: ${({theme}) => theme.spacing.sm}px;
 `;
