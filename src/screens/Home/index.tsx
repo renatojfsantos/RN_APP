@@ -4,13 +4,17 @@ import {Text} from '~/components/Text';
 
 import {Container} from './styles';
 
-export const Home = ({navigation}) => {
-  const handleNavigation = () => navigation.navigate('Profile');
+export const Home = ({navigation, route}) => {
+  const data = route.params;
+  const handleNavigation = () =>
+    navigation.navigate('Profile', {
+      userName: 'Renato Santos',
+    });
 
   return (
     <Container>
       <TouchableOpacity onPress={handleNavigation}>
-        <Text>Home</Text>
+        <Text>{`Home: ${data?.selectedUser}`}</Text>
       </TouchableOpacity>
     </Container>
   );
