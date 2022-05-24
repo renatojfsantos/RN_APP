@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {useApperance} from '~/hooks/useApperance';
-import {Routes} from './routes';
+import Routes from './routes';
 
 const App = () => {
   const {theme} = useApperance();
