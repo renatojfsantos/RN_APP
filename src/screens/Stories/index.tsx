@@ -4,7 +4,7 @@ import React from 'react';
 import {Container} from './styles';
 
 export const Stories = () => {
-  const {params} = useRoute();
-  console.log(params);
+  const {params} = useRoute<StoriesHomeStackRouteProp>();
+  console.log(params.profile);
   return <Container />;
 };

@@ -5,10 +5,18 @@ import {Button} from 'react-native';
 import {Container} from './styles';
 
 export const Feed = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StartBottomTabNavigationProp>();
 
   const handlePress = () => {
-    navigation.navigate('Stories', {para: 'Renatinho'});
+    // navigation.navigate('Profile');
+    // navigation.navigate('Home');
+
+    navigation.navigate('Home', {
+      screen: 'Stories',
+      params: {
+        profile: 'Renatinho',
+      },
+    });
   };
 
   const handlePressToPost = () => {

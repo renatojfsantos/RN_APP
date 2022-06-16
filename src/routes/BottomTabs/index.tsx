@@ -4,7 +4,7 @@ import {Icon} from '~/components/Icon';
 import HomeStackNavigator from '../HomeStackNavigator';
 import ProfileStackNavigator from '../ProfileStackNavigator';
 
-const BottomTab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 const BottomTabs = () => {
   return (
