@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {DevSettings} from 'react-native';
-import BottomTabNavigator from './SignedinNavigator/BottomTabNavigator';
+import BottomTabNavigator from './SignedInNavigator/BottomTabNavigator';
 import SignInNavigator from './SignInNavigator';
 
 const Routes = () => {
