@@ -1,9 +1,9 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {OnBoarding} from '~/screens/Signin/OnBoarding';
-import {Access} from '~/screens/Signin/Access';
-import {Login} from '~/screens/Signin/Login';
-import {SignUp} from '~/screens/Signin/SignUp';
+import {OnBoarding} from '~/screens/SignIn/OnBoarding';
+import {Access} from '~/screens/SignIn/Access';
+import {Login} from '~/screens/SignIn/Login';
+import {SignUp} from '~/screens/SignIn/SignUp';
 
 const Stack = createNativeStackNavigator<SignInStackParamList>();
 
