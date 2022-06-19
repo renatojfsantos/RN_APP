@@ -1,10 +1,10 @@
-import {RouteProp} from '@react-navigation/native';
+// import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 declare global {
   export type HomeStackParamList = {
-    Feed: undefined;
-    Stories: {profile: string};
+    Home: undefined;
+    // Stories: {profile: string};
   };
 
   /**
@@ -12,14 +12,14 @@ declare global {
    */
   export type HomeStackNavigatorProp = NativeStackNavigationProp<
     HomeStackParamList,
-    'Feed'
+    'Home'
   >;
 
   /**
    * useRoute types
    */
-  export type StoriesHomeStackRouteProp = RouteProp<
-    HomeStackParamList,
-    'Stories'
-  >;
+  // export type StoriesHomeStackRouteProp = RouteProp<
+  //   HomeStackParamList,
+  //   'Stories'
+  // >;
 }

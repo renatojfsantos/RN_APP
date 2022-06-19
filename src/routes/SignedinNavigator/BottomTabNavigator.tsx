@@ -1,17 +1,17 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icon} from '~/components/Icon';
-import HomeStackNavigator from '../HomeStackNavigator';
-import ProfileStackNavigator from '../ProfileStackNavigator';
+import {Home} from '~/screens/Signedin/Home';
+import {Profile} from '~/screens/Signedin/Profile';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-const BottomTabs = () => {
+const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen
         name="Home"
-        component={HomeStackNavigator}
+        component={Home}
         options={{
           header: () => null,
           tabBarIcon: () => <Icon icon="procurar" />,
@@ -19,7 +19,7 @@ const BottomTabs = () => {
       />
       <BottomTab.Screen
         name="Profile"
-        component={ProfileStackNavigator}
+        component={Profile}
         options={{
           header: () => null,
           tabBarIcon: () => <Icon icon="grafico" />,
@@ -29,4 +29,4 @@ const BottomTabs = () => {
   );
 };
 
-export default BottomTabs;
+export default BottomTabNavigator;

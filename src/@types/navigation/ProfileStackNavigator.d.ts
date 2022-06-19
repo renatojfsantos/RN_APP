@@ -3,7 +3,6 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 declare global {
   export type ProfileStackParamList = {
     Profile: undefined;
-    Post: undefined;
   };
 
   /**
