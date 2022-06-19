@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {useApperance} from '~/hooks/useApperance';
 import Routes from './routes';
+import {AuthProvider} from './contexts/Auth';
 
 const App = () => {
   const {theme} = useApperance();
@@ -11,7 +12,9 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <Routes />
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );
