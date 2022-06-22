@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
-
-import {Container} from './styles';
+import {SafeAreaView} from 'react-native';
+import {Button} from '~/components/Button';
+import {useAuth} from '~/hooks/useAuth';
 
 export const Home = () => {
+  const {signOut} = useAuth();
   return (
-    <Container>
-      <Text>Tela de Home</Text>
-    </Container>
+    <SafeAreaView>
+      <Button onPress={signOut}>Sign Out</Button>
+    </SafeAreaView>
   );
 };

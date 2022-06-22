@@ -1,15 +1,23 @@
-import React, {useContext} from 'react';
-import {Text} from 'react-native';
-import {AuthContext} from '~/contexts/Auth';
-
-import {Container} from './styles';
+import React from 'react';
+import {SafeAreaView} from 'react-native';
+import {Button} from '~/components/Button';
+import {useAuth} from '~/hooks/useAuth';
 
 export const OnBoarding = () => {
-  const bolinha = useContext(AuthContext);
-  console.log(bolinha);
+  const {signIn, loading} = useAuth();
+
   return (
-    <Container>
-      <Text>Tela de OnBoarding</Text>
-    </Container>
+    <SafeAreaView>
+      <Button
+        loading={loading}
+        onPress={() =>
+          signIn({
+            email: '',
+            password: '',
+          })
+        }>
+        Sign In
+      </Button>
+    </SafeAreaView>
   );
 };

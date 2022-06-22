@@ -1,14 +1,12 @@
-import React, {useContext} from 'react';
-import {AuthContext} from '~/contexts/Auth';
+import React from 'react';
+import {useAuth} from '~/hooks/useAuth';
 import BottomTabNavigator from './SignedInNavigator/BottomTabNavigator';
 import SignInNavigator from './SignInNavigator';
 
 const Routes = () => {
-  const {isLoggedIn} = useContext(AuthContext);
+  const {isSignedIn} = useAuth();
 
-  console.log(isLoggedIn);
-
-  return isLoggedIn ? <BottomTabNavigator /> : <SignInNavigator />;
+  return isSignedIn ? <BottomTabNavigator /> : <SignInNavigator />;
 };
 
 export default Routes;
