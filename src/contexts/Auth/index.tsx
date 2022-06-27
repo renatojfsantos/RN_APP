@@ -1,9 +1,10 @@
 import React, {createContext, useEffect, useState} from 'react';
-import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {UserDTO} from '~/@types/dtos/user';
 import {asyncUserKeys, AuthContextProps} from './types';
+import {signInResource} from '~/services/resource';
+import {RequestSignInData} from '~/services/resource/types';
 
 export const AuthContext = createContext<AuthContextProps>(
   {} as AuthContextProps,
@@ -18,26 +19,14 @@ export const AuthProvider: React.FC = ({children}) => {
   /**
    * Callbacks para manipulação estados de autenticação
    */
-  const signIn = async ({
-    email,
-    password,
-  }: {
-    email: string;
-    password: string;
-  }) => {
+  const signIn = async (data: RequestSignInData) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:8080/api/auth', {
-        email,
-        password,
-      });
-      setUser(response.data.user);
+      const response = await signInResource(data);
+      setUser(response.user);
       setIsSignedIn(true);
       // api.default.header.Authorization = `Bearer ${response.data.token}`;
-      AsyncStorage.setItem(
-        asyncUserKeys.user,
-        JSON.stringify(response.data.user),
-      );
+      AsyncStorage.setItem(asyncUserKeys.user, JSON.stringify(response.user));
     } catch (error) {
     } finally {
       setLoading(false);
