@@ -12,8 +12,8 @@ export const OnBoarding = () => {
         loading={loading}
         onPress={() =>
           signIn({
-            email: '',
-            password: '',
+            email: 'renato.jfs@gmail.com',
+            password: '$@$123456ABC',
           })
         }>
         Sign In

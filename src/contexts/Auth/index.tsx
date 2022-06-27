@@ -1,4 +1,5 @@
 import React, {createContext, useState} from 'react';
+import axios from 'axios';
 import {UserDTO} from '~/@types/dtos/user';
 import {AuthContextProps} from './types';
 
@@ -14,14 +15,21 @@ export const AuthProvider: React.FC = ({children}) => {
   /**
    * Callbacks para manipulação estados de autenticação
    */
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const signIn = async (data?: {email: string; password: string}) => {
+  const signIn = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
     setLoading(true);
-    await new Promise(resolve => setTimeout(() => resolve('ok'), 2000));
+    const response = await axios.post('http://localhost:8080/api/auth', {
+      email,
+      password,
+    });
+    setUser(response.data.user);
     setLoading(false);
     setIsSignedIn(true);
-    setUser({id: '1'});
   };
 
   const signOut = () => {
