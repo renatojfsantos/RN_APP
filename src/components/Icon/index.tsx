@@ -16,8 +16,16 @@ export const Icon = ({
         size={size}
         source={Icons[icon]}
         style={[{tintColor: activeColor}, style]}
+        resizeMode="contain"
       />
     );
   }
-  return <Container size={size} source={Icons[icon]} style={style} />;
+  return (
+    <Container
+      size={size}
+      source={Icons[icon]}
+      style={style}
+      resizeMode="contain"
+    />
+  );
 };
