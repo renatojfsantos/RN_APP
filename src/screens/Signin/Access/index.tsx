@@ -1,12 +1,9 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useTheme} from 'styled-components';
 
 import {Text} from '~/components/Text';
 import {Button} from '~/components/Button';
 import {Separator} from '~/components/Separator';
-import {useSignInNavigation} from '~/hooks/useSignInNavigation';
 import splashImage from '~/assets/images/splash/splashScreen.png';
 
 import {
@@ -16,17 +13,11 @@ import {
   IconRoundedVaccine,
   IconVaccine,
 } from './styles';
+import {useControllerAccess} from './useControllerAccess';
 
 export const Access = () => {
-  const {bottom} = useSafeAreaInsets();
-  const {spacing} = useTheme();
-  const navigation = useSignInNavigation();
-
-  /**
-   * Callback
-   */
-  const handleNavigateToLogin = () => navigation.navigate('Login');
-  const handleNavigateToSignUp = () => navigation.navigate('SignUp');
+  const {bottom, spacing, handleNavigateToLogin, handleNavigateToSignUp} =
+    useControllerAccess();
 
   return (
     <Container source={splashImage}>
