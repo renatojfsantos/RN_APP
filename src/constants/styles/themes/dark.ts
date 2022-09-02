@@ -9,7 +9,7 @@ export const themeDark: DefaultTheme = {
       onMain: Colors.white,
     },
     secondary: {
-      main: Colors.brand01,
+      main: Colors.brand02,
       onMain: Colors.white,
     },
     error: {
@@ -22,6 +22,14 @@ export const themeDark: DefaultTheme = {
     },
     surface: {
       main: Colors.black,
+      onMain: Colors.white,
+    },
+    surface500: {
+      main: Colors.gray500,
+      onMain: Colors.white,
+    },
+    surface600: {
+      main: Colors.gray600,
       onMain: Colors.white,
     },
   },
