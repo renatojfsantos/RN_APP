@@ -8,8 +8,9 @@ import {HeaderOptions} from '~/components/HeaderOptions';
 import {Icon} from '~/components/Icon';
 import {Separator} from '~/components/Separator';
 import {Text} from '~/components/Text';
+import {BackButton} from '~/components/BackButton';
 
-import {Container, PressableX, AccessText} from './styles';
+import {Container, AccessText} from './styles';
 import {useControllerLogin} from './useControllerLogin';
 
 export const Login = () => {
@@ -20,11 +21,7 @@ export const Login = () => {
     <Container>
       <StatusBar barStyle="dark-content" />
       <HeaderOptions
-        left={
-          <PressableX onPress={handleGoBack}>
-            <Icon icon="closeX" size={15} />
-          </PressableX>
-        }
+        left={<BackButton onPress={handleGoBack} icon="closeX" />}
         right={
           <Text color="primary" typography="body3">
             Esqueci minha senha
@@ -34,7 +31,6 @@ export const Login = () => {
       <Separator height={spacing.md} />
       <Text typography="h3">Login</Text>
       <Separator height={spacing.md} />
-
       <Controller
         control={control}
         name="email"
@@ -55,7 +51,6 @@ export const Login = () => {
           />
         )}
       />
-
       <Controller
         control={control}
         name="password"
@@ -74,7 +69,6 @@ export const Login = () => {
           />
         )}
       />
-
       <Separator height={spacing.md} />
       <Button onPress={onSubmit}>Login</Button>
       <Separator height={spacing.md} />
