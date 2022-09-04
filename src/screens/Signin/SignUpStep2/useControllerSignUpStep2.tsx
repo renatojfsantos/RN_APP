@@ -2,15 +2,21 @@ import {useWindowDimensions} from 'react-native';
 import {useTheme} from 'styled-components/native';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {useRoute} from '@react-navigation/native';
 
 import {useSignInNavigation} from '~/hooks/useSignInNavigation';
-import {schemaSignUp} from './validation';
+import {schemaSignUpStep2} from './validation';
 import {useMemo} from 'react';
 
-export const useControllerSignUp = () => {
+export const useControllerSignUpStep2 = () => {
   const {spacing, colors} = useTheme();
   const navigation = useSignInNavigation();
+  const {
+    params: {firstName, lastName, email},
+  } = useRoute<SignUpStep2StackRouteProp>();
   const {width} = useWindowDimensions();
+
+  console.log({firstName, lastName, email});
 
   /**
    * Forms
@@ -21,23 +27,17 @@ export const useControllerSignUp = () => {
     setValue,
     formState: {errors},
   } = useForm({
-    resolver: yupResolver(schemaSignUp),
+    resolver: yupResolver(schemaSignUpStep2),
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
+      password: '',
+      confirmPassword: '',
     },
   });
 
   const onSubmit = async () => {
     await handleSubmit(
-      ({firstName, lastName, email}) => {
-        console.log({firstName, lastName, email});
-        navigation.navigate('SignUpStep2', {
-          firstName,
-          lastName,
-          email,
-        });
+      ({password, confirmPassword}) => {
+        console.log({password, confirmPassword});
       },
       // () =>
       //   console.error(

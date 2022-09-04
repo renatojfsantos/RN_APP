@@ -58,6 +58,7 @@ export const Login = () => {
           <Input
             ref={ref}
             autoCapitalize="none"
+            autoComplete="password"
             onChange={onChange}
             onChangeText={text => setValue('password', text)}
             value={value}
